@@ -12,7 +12,10 @@ import {
 
 const app = express();
 
-const allowedOrigins = ["https://synonyms-tool.vercel.app/"];
+const allowedOrigins = [
+  "https://synonyms-tool.vercel.app",
+  "https://synonyms-tool.vercel.app/getsynonyms",
+];
 const options: cors.CorsOptions = {
   origin: allowedOrigins,
 };
