@@ -47,6 +47,9 @@ app.post("/api/synonyms", async (req, res, next) => {
     next();
   } else if (Array.isArray(req.body)) {
     const synonymsStorage = await addSynonyms(req.body);
+    if (synonymsStorage.status === "error") {
+      res.status(400).json({ msg: synonymsStorage.msg });
+    }
     res.send(synonymsStorage);
   } else {
     res.status(400).json({ msg: "error wrong post body" });
@@ -67,7 +70,7 @@ app.get("/", async (req, res) => {
   return res.status(200).json({ message: "synonyms server is started" });
 });
 
-const server = app.listen(5000, () => {
+const server = app.listen(5001, () => {
   console.log(`server running on port 5001 and see who can access`);
 });
 
