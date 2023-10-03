@@ -70,7 +70,7 @@ app.get("/", async (req, res) => {
   return res.status(200).json({ message: "synonyms server is started" });
 });
 
-const server = app.listen(5001, () => {
+const server = app.listen(5000, () => {
   console.log(`server running on port 5001 and see who can access`);
 });
 
