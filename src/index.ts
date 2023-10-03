@@ -11,7 +11,6 @@ import {
 } from "./services/services";
 
 const app = express();
-
 const allowedOrigins = ["https://synonyms-tool.vercel.app"];
 const options: cors.CorsOptions = {
   origin: allowedOrigins,
